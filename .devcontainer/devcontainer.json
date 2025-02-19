@@ -5,7 +5,10 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 	"features": {
-		"ghcr.io/devcontainers-extra/features/deno:1": {}
+		"ghcr.io/devcontainers-extra/features/deno:1": {},
+	"extensions": [
+		"denoland.vscode-deno"
+	]
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
