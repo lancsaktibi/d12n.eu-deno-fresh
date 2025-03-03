@@ -1,25 +1,32 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
+// Post: the Post structure 
+// getPosts: the shortlist reader
+// Handlers: performs a task once the route is called 
+// PageProps: an object to store and transfer data across pages
+// PostCard: the short version of a post
+import { Post, getPosts } from "../utils/posts.ts";
+import { Handlers } from "$fresh/server.ts";
+import { PageProps } from "$fresh/server.ts";
+import { PostCard } from "../components/PostCard.tsx";
 
-export default function Home() {
-  const count = useSignal(3);
+
+// activate handler to call getPosts() that reads post titles from the disk
+export const handler: Handlers<Post[]> = {
+  async GET(_req, ctx) {
+    const posts = await getPosts();
+    return ctx.render(posts);
+  },
+};
+
+// render the index page and use post titles from PageProps
+export default function IndexPage(props: PageProps<Post[]>) {
+  const posts = props.data;
   return (
-    <div class="px-4 py-8 mx-auto bg-[#86efac]">
-      <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-        <img
-          class="my-6"
-          src="/logo.svg"
-          width="128"
-          height="128"
-          alt="the Fresh logo: a sliced lemon dripping with juice"
-        />
-        <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
-        <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
-        </p>
-        <Counter count={count} />
+    <main class="max-w-screen-md px-4 pt-16 mx-auto">
+      <h1 class="text-5xl font-bold">D12N.EU</h1>
+      <div class="mt-8">
+        {posts.map((post) => <PostCard post={post} />)}
       </div>
-    </div>
+    </main>
   );
 }
+
