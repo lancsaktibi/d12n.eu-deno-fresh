@@ -5,3 +5,9 @@ snippet: This is an excerpt of the welcome message.
 ---
 
 Hello, world! Welcome to the D12N.EU Website!
+
+# This is h1
+
+## This is h2
+
+**bold**
