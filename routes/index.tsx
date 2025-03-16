@@ -22,7 +22,6 @@ export default function IndexPage(props: PageProps<Post[]>) {
   const posts = props.data;
   return (
     <main class="max-w-screen-md px-4 pt-16 mx-auto">
-      <h1 class="text-5xl font-bold">D12N.EU</h1>
       <div class="mt-8">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
