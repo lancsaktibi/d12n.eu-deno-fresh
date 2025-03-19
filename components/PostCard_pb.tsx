@@ -11,7 +11,7 @@ export function PostCard(props: { post: Post }) {
         <div class="card-body">
           <h5 class="card-title">{post.title}</h5>
           <p class="card-text">{post.snippet}</p>
-          <a href={`/${post.slug}`} class="btn btn-primary">Mehr...</a>
+          <a href={`/pol-bildung/${post.slug}`} class="btn btn-primary">Mehr...</a>
         </div>
       </div>
     );

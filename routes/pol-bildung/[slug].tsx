@@ -4,7 +4,7 @@
 // PageProps: an object to store and transfer data across pages
 // CSS, render: markdown formatting from gfm
 // Head: html head section for rendering
-import { Post, getPost } from "../utils/posts.ts";
+import { Post, getPost } from "../../utils/posts.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS, render } from "@deno/gfm"

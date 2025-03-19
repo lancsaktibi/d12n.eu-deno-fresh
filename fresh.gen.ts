@@ -2,25 +2,27 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $_slug_ from "./routes/[slug].tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $index_old from "./routes/index_old.tsx";
+import * as $pol_bildung_slug_ from "./routes/pol-bildung/[slug].tsx";
+import * as $pol_bildung_index from "./routes/pol-bildung/index.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/[slug].tsx": $_slug_,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/index_old.tsx": $index_old,
+    "./routes/pol-bildung/[slug].tsx": $pol_bildung_slug_,
+    "./routes/pol-bildung/index.tsx": $pol_bildung_index,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
